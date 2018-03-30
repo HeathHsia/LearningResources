@@ -1,5 +1,5 @@
 # 持续更新ing ...
-## iOS (部分资源摘自饶神)
+## iOS (部分资源摘自[饶神](https://github.com/raozhizhen))
 
 ### 类和对象
 1. [iOS 程序 main 函数之前发生了什么](http://blog.sunnyxx.com/2014/08/30/objc-pre-main/)
