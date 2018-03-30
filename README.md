@@ -109,7 +109,7 @@
 
 ## Git
 
-[git&&github&&gitlab](https://www.jianshu.com/p/8d497989f704)
+[git github gitlab](https://www.jianshu.com/p/8d497989f704)
 
 ### 书籍记录
 1. The Swift Programming Language 3.0 swift编程语言3.0
