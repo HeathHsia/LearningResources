@@ -1,5 +1,5 @@
 # 持续更新ing ...
-## iOS (部分总结摘自[饶神](https://github.com/raozhizhen))
+## iOS
 
 ### 类和对象
 1. [iOS 程序 main 函数之前发生了什么](http://blog.sunnyxx.com/2014/08/30/objc-pre-main/)
@@ -24,7 +24,7 @@
 2. [iOS 中的事件处理、响应者链条以及第一响应者](http://www.cnblogs.com/forwk/p/4843159.html)
 3. [在 Target-Action 中使用响应链](http://swift.gg/2016/01/06/utilize-the-responder-chain-for-target-action/)
 
-### GCD和NSOperation 区别
+### GCD
 1. [GCD 深入理解：第一部分](https://github.com/nixzhu/dev-blog/blob/master/2014-04-19-grand-central-dispatch-in-depth-part-1.md)
 2. [GCD 深入理解：第二部分](https://github.com/nixzhu/dev-blog/blob/master/2014-05-14-grand-central-dispatch-in-depth-part-2.md)
 3. [GCD](https://bestswifter.com/deep-gcd/)
@@ -48,7 +48,7 @@
 6. [关于 @synchronized，这儿比你想知道的还要多](http://yulingtianxia.com/blog/2015/11/01/More-than-you-want-to-know-about-synchronized/)
 7. [iOS 中保证线程安全的几种方式与性能对比](https://www.jianshu.com/p/938d68ed832c)
 
-### 动画
+### 动画 图层
 1. [Core Animation](https://hit-alibaba.github.io/interview/iOS/Cocoa-Touch/Animation.html)
 2.	[CoreGraphics教程](http://www.cnblogs.com/xdream86/archive/2012/12/12/2814552.html)  
 3.	画板实现 
@@ -74,7 +74,7 @@
 1. [Objective-C中的KVC和KVO](http://yulingtianxia.com/blog/2014/05/12/objective-czhong-de-kvche-kvo/)
 2. [KVO安全使用(防止dealloc中移除监听者崩溃)](https://www.jianshu.com/p/f8bb89aad2df)
 
-### 面试经验
+### 面试
 1. [三月份实习校招后，也该为 BAT 秋招囤一些干货了](http://ios.jobbole.com/84506/)
 2. [笔试面试知识整理](https://hit-alibaba.github.io/interview/)
 3. [招聘一个靠谱的iOS — 参考答案](https://github.com/ChenYilong/iOSInterviewQuestions)
