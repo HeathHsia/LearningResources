@@ -36,6 +36,91 @@
 4. [Method Swizzling 和 AOP 实践](http://tech.glowing.com/cn/method-swizzling-aop/)
 5. [刨根问底：对于 self = [super init] 的思考](https://www.jianshu.com/p/9b36e1b636d8)
 
+```
+// 冒泡排序 进行n-1趟, 每趟都进行相邻数字比较
+void bubbleSort (int arr[], int len)
+{
+    int temp;
+    for (int i = 0; i < len - 1; i++) {
+        bool flag = true;
+        for (int j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                flag = false;
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+        if (flag) {
+            break;
+        }
+    }
+}
+
+// 选择排序 外部循环进行len-1趟, 每趟找出最小的元素放到该趟的首位, 第i趟的时候从i+1一直到len-1进行比较
+void selectionSort (int arr[], int len)
+{
+    
+    
+    int temp, min;
+    for (int i = 0; i < len - 1; i++) {
+        min = i;
+        for (int j = i + 1; j < len; j++) {
+            if (arr[min] > arr[j]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            temp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+
+// 插入排序 每一步都是将待排序的序列插入到前面已经排好序的序列中
+void insertSort (int arr[], int len)
+{
+    for (int i = 0; i < len; i++) {
+        int j = i;
+        int temp;
+        while (j > 0 && arr[j] < arr[j - 1]) {
+            temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            j--;
+        }
+    }
+}
+
+// 快速排序
+void quickSort (int arr[], int l, int r)
+{
+    if (l < r) {
+        int i = l, j = r, x = arr[l];
+        while (i < j) {
+            while (i < j && arr[j] >= x) {
+                j--;
+            }
+            if (i < j) {
+                arr[i++] = arr[j];
+            }
+            while (i < j && arr[i] < x) {
+                i++;
+            }
+            if (i < j) {
+                arr[j--] = arr[i];
+            }
+        }
+        arr[i] = x;
+        quickSort(arr, l, i - 1);
+        quickSort(arr, i + 1, r);
+    }
+}
+
+
+
+
 ### Runloop
 1. [深入理解 RunLoop](http://blog.ibireme.com/2015/05/18/runloop/)
 
@@ -120,4 +205,5 @@
 6. 图解HTTP
 7. 图解TCP/IP
 
+```
 
