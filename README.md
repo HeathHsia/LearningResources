@@ -248,7 +248,6 @@ void quickSort (int arr[], int l, int r)
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
                 [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:31 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-                sleep(1);
                 _count += 2;
                 [self loadImage];
             });
