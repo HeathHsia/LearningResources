@@ -210,46 +210,43 @@ void quickSort (int arr[], int l, int r)
 
 
 ```
-  static NSString *TableCell_Identifier = @"TableCell_Identifier";
-
-@interface TableViewController ()<UITableViewDataSource, UITableViewDelegate>
-
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, assign) NSInteger count;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, assign) NSInteger count;
 
 @end
 
-@implementation TableViewController
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     _count = 1;
-    self.dataArr = [[NSMutableArray alloc] init];
+    _dataArr = [[NSMutableArray alloc] init];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self loadImage];
+        [self loadImages];
     });
+    
 }
 
-- (void)loadImage
+- (void)loadImages
 {
-    if (_count > 31) {
+    if (_count > 16) {
         return ;
     }
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSURL *imageUrl = [NSURL URLWithString:@"https://www.baidu.com/img/baidu_logo.gif"];
         NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
         UIImage *image = [UIImage imageWithData:imageData];
-        sleep(1);
         if (image) {
-            [self.dataArr addObject:image];
             dispatch_async(dispatch_get_main_queue(), ^{
+                [_dataArr addObject:image];
                 [self.tableView reloadData];
-                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:31 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-                _count += 2;
-                [self loadImage];
+                NSIndexPath *index = [NSIndexPath indexPathForRow:31 inSection:0];
+                [self.tableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionNone animated:NO];
+                _count += 1;
+                [self loadImages];
             });
         }
     });
@@ -262,23 +259,22 @@ void quickSort (int arr[], int l, int r)
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.dataArr.count >= (indexPath.row / 2 + 1) && (indexPath.row + 1) % 2 == 0) {
+    if ((indexPath.row + 1) % 2 == 0 && (self.dataArr.count > (indexPath.row - 1 ) / 2 ))
+    {
         return indexPath.row + 1 + 16;
-    }else {
-        return 16;
     }
+    return 16;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableCell_Identifier forIndexPath:indexPath];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.titleLab.text = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
     if ((indexPath.row + 1) % 2 == 0) {
-        cell.contentView.backgroundColor = [UIColor blueColor];
-        if (self.dataArr.count >= (indexPath.row / 2 + 1)) {
-            UIImage *image = self.dataArr[indexPath.row / 2];
-            cell.logoImg.image = image;
+        if (self.dataArr.count > (indexPath.row - 1 ) / 2 ) {
+            cell.logoImg.image = self.dataArr[(indexPath.row - 1) / 2];
         }
+        cell.contentView.backgroundColor = [UIColor blueColor];
     }else {
         cell.logoImg.image = nil;
         cell.contentView.backgroundColor = [UIColor yellowColor];
@@ -286,15 +282,16 @@ void quickSort (int arr[], int l, int r)
     return cell;
 }
 
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.dataSource = self;
         _tableView.delegate = self;
-        [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:TableCell_Identifier];
+        _tableView.dataSource = self;
+        [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+        
     }
     return _tableView;
 }
-
 ```
