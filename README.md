@@ -125,6 +125,7 @@
 
 ### 博客集
 1. [故胤道长](https://www.jianshu.com/u/8d5b91490ca5)
+2. [头条技术博客](https://techblog.toutiao.com/)
 
 ## 算法
 数据结构算法与应用 C++描述
