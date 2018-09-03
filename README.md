@@ -133,3 +133,15 @@
 ## 算法
 数据结构算法与应用 C++描述
 
+## 安卓
+
+### 安卓常用的库
+1. [okhttp网络层](https://github.com/square/okhttp)
+2. [glide图片加载缓存](https://github.com/bumptech/glide)
+3. [butterknife注释](https://github.com/JakeWharton/butterknife)
+4. [EventBus事件总线](https://github.com/greenrobot/EventBus)
+5. [greenDAO数据库](https://github.com/greenrobot/greenDAO)
+6. [RxJava(响应式编程)](https://github.com/ReactiveX/RxJava)
+7. [dagger日志输出](https://github.com/google/dagger)
+
+
