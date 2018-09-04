@@ -134,7 +134,7 @@
 数据结构算法与应用 C++描述
 
 ## 安卓
-1.[android google source](https://android.googlesource.com/platform/development/+/master/samples)
+[android google source](https://android.googlesource.com/platform/development/+/master/samples)
 
 ### 安卓常用的库
 1. [okhttp网络层](https://github.com/square/okhttp)
