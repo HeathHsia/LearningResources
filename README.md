@@ -137,11 +137,12 @@
 
 ### 安卓常用的库
 1. [okhttp网络层](https://github.com/square/okhttp)
-2. [glide图片加载缓存](https://github.com/bumptech/glide)
-3. [butterknife注释](https://github.com/JakeWharton/butterknife)
-4. [EventBus事件总线](https://github.com/greenrobot/EventBus)
-5. [greenDAO数据库](https://github.com/greenrobot/greenDAO)
-6. [RxJava(响应式编程)](https://github.com/ReactiveX/RxJava)
-7. [dagger日志输出](https://github.com/google/dagger)
+2. [retrofit网络层](https://github.com/square/retrofit)
+3. [glide图片加载缓存](https://github.com/bumptech/glide)
+4. [butterknife注释](https://github.com/JakeWharton/butterknife)
+5. [EventBus事件总线](https://github.com/greenrobot/EventBus)
+6. [greenDAO数据库](https://github.com/greenrobot/greenDAO)
+7. [RxJava(响应式编程)](https://github.com/ReactiveX/RxJava)
+8. [dagger日志输出](https://github.com/google/dagger)
 
 
